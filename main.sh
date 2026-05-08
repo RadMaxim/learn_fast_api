@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo "Generating markdown docs..."
+pydoc-markdown
 echo "Generating requirements.txt..."
 python -m pip freeze > requirements.txt
 

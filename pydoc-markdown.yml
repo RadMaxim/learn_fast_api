@@ -1,0 +1,11 @@
+loaders:
+  - type: python
+    search_path: [.]
+
+processors:
+  - type: filter
+  - type: smart
+
+renderer:
+  type: markdown
+  filename: docs/api.md

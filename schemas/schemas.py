@@ -38,3 +38,8 @@ class Person(CreatePerson):
     """
 
     id: int
+
+
+class UserLoginSchema(BaseModel):
+    username: str
+    password: str

@@ -1,9 +1,22 @@
+"""
+Schemas module.
+
+Содержит Pydantic модели приложения.
+"""
+
 from pydantic import BaseModel
 
 
 class Person(BaseModel):
     """
-    Модель для get - запроса
+    Полная модель пользователя.
+
+    Attributes:
+        id: Уникальный идентификатор пользователя.
+        name: Имя пользователя.
+        age: Возраст пользователя.
+        photo: Ссылка на фотографию.
+        password: Пароль пользователя.
     """
 
     id: int
@@ -15,7 +28,13 @@ class Person(BaseModel):
 
 class CreatePerson(BaseModel):
     """
-    Модель для post - запроса, создания нового пользователя
+    Модель создания пользователя.
+
+    Attributes:
+        name: Имя пользователя.
+        age: Возраст пользователя.
+        photo: URL фотографии.
+        password: Пароль пользователя.
     """
 
     name: str

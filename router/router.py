@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from schemas.schemas import CreatePerson
+from schemas.schemas import CreatePerson, Person
 from services.services import create_person, get_all_people, get_person_id
 from utils.decorators import handle_exceptions, log_return
 
@@ -17,19 +17,19 @@ def root():
 @router.get("/{id}", summary="Получить конкретного человека по id", tags=["People"])
 @log_return
 @handle_exceptions
-def get_people_by_id(id: int):
+def get_people_by_id(id: int) -> Person:
     return get_person_id(id)
 
 
 @router.get("", summary="Получить всех людей", tags=["People"])
 @log_return
 @handle_exceptions
-def get_people():
+def get_people() -> list[Person]:
     return get_all_people()
 
 
 @router.post("", tags=["People"], summary="Создать нового человека")
 @log_return
 @handle_exceptions
-def create_new_person(person: CreatePerson):
+def create_new_person(person: CreatePerson) -> Person:
     return create_person(person)

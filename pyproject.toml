@@ -1,0 +1,49 @@
+# pyproject.toml
+
+[tool.ruff]
+
+# Максимальная длина строки
+line-length = 88
+
+# Python version
+target-version = "py312"
+
+# Какие правила включить
+lint.select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort imports
+    "UP",  # pyupgrade
+    "B",   # bugbear
+]
+
+# Какие правила игнорировать
+lint.ignore = [
+    "E501", # line too long
+]
+
+# Исключить папки
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "migrations",
+]
+
+# Автоисправление
+fix = true
+
+
+[tool.ruff.format]
+
+# Использовать двойные кавычки
+quote-style = "double"
+
+# Отступы пробелами
+indent-style = "space"
+
+# Автоматически определять окончания строк
+line-ending = "auto"
+
+# Форматирование docstring code blocks
+docstring-code-format = true

@@ -8,6 +8,7 @@ class Person(BaseModel):
     photo: str
     password: str
 
+
 class CreatePerson(BaseModel):
     name: str
     age: int

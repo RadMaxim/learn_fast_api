@@ -1,5 +1,5 @@
-from functools import wraps
 import logging
+from functools import wraps
 
 
 def log_return(func):
@@ -23,12 +23,9 @@ def handle_exceptions(func):
         try:
             return func(*args, **kwargs)
 
-
         except Exception as error:
             logging.error(f"{func.__name__} error: {error}")
 
-            return {
-                "error": str(error)
-            }
+            return {"error": str(error)}
 
     return wrapper

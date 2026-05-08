@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
+
 from router.router import router as people_router
 
 app = FastAPI()

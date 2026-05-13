@@ -1,3 +1,5 @@
+from time import sleep
+
 from fastapi import APIRouter, Depends
 
 from schemas.schemas import CreatePerson, Person
@@ -55,6 +57,7 @@ def get_people() -> list[Person]:
 @log_return
 @handle_exceptions
 def create_new_person(person: CreatePerson) -> Person:
+    sleep(1)
     return create_person(person)
 
 

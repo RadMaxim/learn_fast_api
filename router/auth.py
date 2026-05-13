@@ -6,7 +6,7 @@ from services.auth_service import config, security
 authApp = APIRouter(tags=["Login"])
 
 
-@authApp.post("login")
+@authApp.post("/login")
 def login(creds: UserLoginSchema, response: Response):
 
     if creds.username == "test" and creds.password == "test":
